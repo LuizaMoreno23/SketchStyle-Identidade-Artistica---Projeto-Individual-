@@ -1,0 +1,77 @@
+/* Fonte para os Títulos (Balmy) */
+@font-face {
+    font-family: 'Balmy';
+    src: url('assets/fontes/balmy/Balmy\ Beta.ttf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Fonte para os Títulos (Garet)*/
+@font-face {
+    font-family: 'Garet';
+    src: url('assets/fontes/garet/Garet-Book.woff2') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* 2. CONFIGURAÇÃO DA SEÇÃO (Altura reduzida e Fundo Escuro) */
+.secao-pratica {
+    width: 100%;
+    background-color: #1a1a1a; 
+    padding: 100px 0;         /* Controla a altura da página pelo respiro interno */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-top: 5px solid black;
+}
+
+.sketch4 {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+}
+
+/* 3. CONTEÚDO (Centralização sem quebrar o scroll) */
+.conteudo-pratica {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo-pratica {
+    font-family: 'Balmy', sans-serif !important;
+    color: #ffffff;
+    font-size: 70px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+/* 4. BOTÃO ESTILIZADO */
+.botao-quiz {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    text-decoration: none;
+    font-family: 'Garet', sans-serif !important;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 18px 50px;
+    border-radius: 15px; 
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.botao-quiz:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+}

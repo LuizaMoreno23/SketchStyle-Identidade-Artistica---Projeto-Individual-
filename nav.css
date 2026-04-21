@@ -1,0 +1,66 @@
+@font-face {
+    font-family: 'Garet';
+    src: url('assets/fontes/garet/Garet-Book.woff2') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Configurações Gerais para resetar o espaço do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Garet', sans-serif; 
+}
+
+/* Estilo da Barra de Navegação */
+.navbar {
+    background-color: #231f20; 
+    display: flex;
+    justify-content: space-between; /* Joga a logo pra um lado e os links pro outro */
+    align-items: center;
+    padding: 15px 5%; /* Espaçamento interno nas laterais */
+    height: 80px;
+}
+
+/* Tamanho da Logo */
+.logo img {
+    height: 90px; /* Ajuste conforme o tamanho da sua imagem */
+    width: auto;
+}
+
+/* Estilo da lista de links */
+.nav-links {
+    display: flex;
+    list-style: none; /* Remove as bolinhas da lista */
+    gap: 50px; /* Espaço entre cada link */
+}
+
+/* Estilo de cada link de texto */
+.nav-links a {
+    color: white;
+    text-decoration: none; /* Remove o sublinhado */
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s; /* Deixa o efeito de passar o mouse suave */
+}
+
+/* Efeito ao passar o mouse nos links */
+.nav-links a:hover {
+    color: #cccccc;
+}
+
+/* Estilo especial para o botão ENTRAR */
+.btn-entrar {
+    border: 2px solid white;
+    padding: 10px 35px;
+    border-radius: 15px; /* Faz as bordas arredondadas */
+    transition: background 0.3s;
+}
+
+/* Efeito ao passar o mouse no botão Entrar */
+.btn-entrar:hover {
+    background-color: white;
+    color: black !important;
+}

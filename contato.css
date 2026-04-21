@@ -1,0 +1,77 @@
+@font-face {
+    font-family: 'Balmy';
+    src: url('assets/fontes/balmy/Balmy\ Beta.ttf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Fonte para os Títulos (Garet)*/
+@font-face {
+    font-family: 'Garet';
+    src: url('assets/fontes/garet/Garet-Book.woff2') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.secao-redes {
+    width: 100%;
+    min-height: 300px; /* Altura pequena para ser apenas um rodapé */
+    background-color: #1a1a1a; 
+    background-image: url('assets/images/banner-rede.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+    border-top: 5px solid black;
+}
+
+.container-redes {
+    text-align: center;
+    color: white;
+    width: 90%;
+}
+
+.logo-footer img {
+    height: 100px; /* Ajuste o tamanho da logo conforme necessário */
+    margin-bottom: 15px;
+    
+}
+
+.titulo-redes {
+    font-family: 'Garet', sans-serif;
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.lista-redes {
+    display: flex;
+    justify-content: center;
+    gap: 50px; /* Espaço entre os ícones */
+    flex-wrap: wrap; /* Garante que funcione em telas menores */
+}
+
+.item-rede {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.item-rede img {
+    width: 40px; /* Tamanho dos ícones de rede social */
+}
+
+.item-rede p {
+    font-family: 'Garet', sans-serif;
+    font-size: 14px;
+}

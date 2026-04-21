@@ -1,0 +1,100 @@
+/* 1. FONTES - Caminhos ajustados para sair da pasta /styles e entrar em /assets */
+@font-face {
+    font-family: 'Balmy';
+    src: url('assets/fontes/balmy/Balmy\ Beta.ttf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Garet';
+    src: url('assets/fontes/garet/Garet-Book.woff2') format('woff2'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 2. ESTRUTURA DA SEÇÃO */
+.secao-estilo {
+    width: 100%;
+    background-color: #fff;
+    padding: 5px 0;
+}
+
+.container-moldura-sketch3 {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.wrapper-flutuante3 {
+    position: relative;
+    width: 100%;
+    min-height: 850px; /* Altura para garantir que o Templo caiba */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 3. IMAGENS FLUTUANTES (Sintaxe de classe grudada) */
+.img-flutuante {
+    position: absolute;
+    z-index: 1; /* Ficam atrás do texto */
+}
+
+.img-flutuante.rabisco-topo {
+    top: 0;
+    left: 10%;
+    width: 180px;
+}
+
+.img-flutuante.cometa {
+    top: 0px;
+    right: 5%;
+    width: 230px;
+}
+
+.img-flutuante.ovni {
+    top: 25%;
+    left: 2%;
+    width: 210px;
+}
+
+.img-flutuante.pagode {
+    top: 30%;
+    right: 0;
+    width: 500px;
+    height: 600px;
+}
+
+.img-flutuante.casal {
+    bottom: 0;
+    left: 2%;
+    width: 350px;
+
+}
+
+/* 4. BLOCO DE TEXTO CENTRALIZADO */
+.conteudo-texto-estilo {
+    position: relative;
+    z-index: 10; /* Garante que o texto fique na frente de todas as imagens */
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 90px;
+}
+
+.conteudo-texto-estilo h1 {
+    font-family: 'Balmy', sans-serif !important;
+    font-size: 72px;
+    color: #000;
+    margin-bottom: 25px;
+    line-height: 1.1;
+}
+
+.paragrafos-estilo p {
+    font-family: 'Garet', sans-serif !important;
+    font-size: 19px;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}

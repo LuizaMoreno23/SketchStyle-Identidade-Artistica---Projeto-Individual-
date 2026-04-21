@@ -1,0 +1,103 @@
+/* Fonte para os Títulos (Balmy) */
+@font-face {
+    font-family: 'Balmy';
+    src: url('assets/fontes/balmy/Balmy\ Beta.ttf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Fonte para os Títulos (Garet)*/
+@font-face {
+    font-family: 'Garet';
+    src: url('assets/fontes/garet/Garet-Book.woff2') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 2. Centralização do Cabeçalho */
+.titulo-tecnicas {
+    font-family: 'Balmy', sans-serif;
+    font-size: 80px;
+    text-align: center; /* Centraliza o título principal */
+    width: 100%;
+    margin-top: 0;        /* Remove a margem padrão do topo */
+}
+
+.desc-tecnicas {
+    font-family: 'Garet', sans-serif;
+    text-align: center; /* Centraliza a descrição superior */
+    font-size: 25px;
+    margin-bottom: 60px;
+    width: 100%;
+}
+
+/* --- 1. AJUSTE DO CONTAINER MOLDURA (Para ocupar mais tela) --- */
+.containerr-molduraa-sketchh {
+    background-image: url('assets/images/linha-baixo.png'); 
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 97%;           
+    max-width: 1500px;    /* Aumentado de 1600px para 1800px (preenche melhor) */
+    margin: 0px auto; 
+    padding: 60px 2%;     /* Reduzido o padding lateral para 2% responsivo */
+}
+
+.box-conteudo-rabiscado h3 {
+    font-family: 'Balmy', sans-serif;
+    font-size: 32px;
+    margin-bottom: 12px;
+    color: #000;
+}
+
+.box-conteudo-rabiscado p {
+    font-family: 'Garet', sans-serif;
+    font-size: 22px;
+    line-height: 1.4;
+    color: #000;
+}
+
+/* --- 2. AJUSTE DO WRAPPER DA LISTA (Aumentando o gap lateral) --- */
+.item-fundamento {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;            /* Aumentado o espaço entre caixa/seta/exemplo para espalhar mais */
+    width: 100%;
+    padding: 0 2%;        /* Pequeno respiro interno lateral */
+}
+
+/* --- 3. AJUSTE DA CAIXA RABISCADA (Um pouco mais larga) --- */
+.box-conteudo-rabiscado {
+    background-image: url('assets/images/moldura-retangulo.png'); 
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 600px;        
+    padding: 20px 60px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 300px;
+}
+
+/* --- 4. ESCALANDO A SETA (Para ficar visível) --- */
+.imagem-seta-tecnica {
+    width: 150px;         
+    height: auto;
+    object-fit: contain;  /* Garante que a seta não deforma */
+}
+
+/* --- 5. ESCALANDO O EXEMPLO VISUAL (Para ocupar espaço) --- */
+.exemplo-visual {
+    width: 300px;         /* Define uma área de ocupação maior */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.exemplo-visual img {
+    width: 100%;          /* A imagem cresce até o limite do container .exemplo-visual */
+    max-width: 280px;     /* Aumentado o limite máximo */
+    height: auto;
+    object-fit: contain;
+}
