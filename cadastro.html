@@ -60,25 +60,25 @@
    // Limpar mensagens anteriores
     div_mensagem.innerHTML = "";
 
-    // Validação de Nome (Mínimo 3 caracteres)
+    // Validação de nome mínimo 3 caracteres
     if (nome.length <= 3) {
         div_mensagem.innerHTML = "Por favor, insira um nome válido.";
         return; // O return para a execução aqui se houver erro
     }
 
-    //Validação de E-mail (@ e .com)
+    //Validação de E-mail @ e .com
     if (!email.includes("@") || !email.includes(".com")) {
         div_mensagem.innerHTML = "O e-mail deve conter '@' e '.com'.";
     return;
 }
 
-    //Validação de Senha (Mínimo 8 caracteres)
+    //Validação de senha mínimo 8 caracteres
     if (senha.length < 8) {
         div_mensagem.innerHTML = "A senha deve ter pelo menos 8 caracteres.";
         return;
     }
 
-    //Validação de Senha (Números e Especiais usando FOR e VETOR)
+    //Validação de Senha numeros e especiais usando FOR e o Vetor
     let lista_especiais = ["!", "@", "#", "$", "%", "&", "*", "_"];
     let lista_numeros = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
     let tem_especial = false;
@@ -114,7 +114,7 @@
         return;
     }
 
-    // Se passou por todos os IFs sem dar return:
+    // Se passou por todos os IFs sem dar return está ok:
     div_mensagem.innerHTML = "<span style='color: green;'>Cadastro realizado com sucesso!</span>";
 }
 

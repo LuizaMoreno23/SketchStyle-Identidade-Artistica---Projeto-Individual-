@@ -5,7 +5,6 @@
     font-style: normal;
 }
 
-/* Fonte para os Títulos (Garet)*/
 @font-face {
     font-family: 'Garet';
     src: url('assets/fontes/garet/Garet-Book.woff2') format('truetype'); 
@@ -16,7 +15,6 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 .secao-redes {
@@ -40,7 +38,7 @@
 }
 
 .logo-footer img {
-    height: 100px; /* Ajuste o tamanho da logo conforme necessário */
+    height: 100px; /* Ajuste o tamanho da logo */
     margin-bottom: 15px;
     
 }
@@ -57,7 +55,6 @@
     display: flex;
     justify-content: center;
     gap: 50px; /* Espaço entre os ícones */
-    flex-wrap: wrap; /* Garante que funcione em telas menores */
 }
 
 .item-rede {

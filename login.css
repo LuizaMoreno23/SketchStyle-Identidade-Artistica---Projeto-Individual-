@@ -5,17 +5,17 @@
     font-style: normal;
 }
 
-/* Fonte para os Títulos (Garet)*/
 @font-face {
     font-family: 'Garet';
     src: url('assets/fontes/garet/Garet-Book.woff2') format('truetype'); 
     font-weight: normal;
     font-style: normal;
 }
+
 * {
     margin: 0;
     padding: 0;
-
+    box-sizing: border-box;
 }
 
 .tela-acesso {
@@ -86,7 +86,7 @@
 }
 
 .btn-preto {
-    width: 425px;
+    width: 100%;
     padding: 12px;
     background-color: #000;
     color: #fff;
