@@ -6,15 +6,19 @@
 
 
 .banner {
-    background-image: url('./assets/images/banner.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 700px; 
+    width: 100%; /* Faz o banner ocupar toda a largura da tela */
+    height: auto; /* Deixa a altura se ajustar proporcionalmente ao GIF */
+    max-height: 700px; /* Limita a altura para não ficar gigante em telas grandes */
     display: block;
-    position: relative;
+    overflow: hidden; /* Garante que nada escape do bloco */
+    background-color: #000; /* Se o GIF for escuro, o fundo preto ajuda a disfarçar cortes */
     border-bottom: 5px solid black;
     border-top: 5px solid black;
-    clear: both; /* Garante que nada fique do lado dele */
+}
+
+.banner img {
+    width: 100%; /* Força o GIF a esticar até as bordas */
+    height: 100%;
+    object-fit: cover; /* Faz o GIF preencher o espaço sem distorcer */
+    display: block;
 }

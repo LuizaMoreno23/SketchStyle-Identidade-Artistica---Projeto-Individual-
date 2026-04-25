@@ -12,22 +12,26 @@
     font-weight: normal;
     font-style: normal;
 }
+* {
+    margin: 0;
+    padding: 0;
+
+}
 
 .tela-acesso {
     display: flex;
     width: 100%;
-    height: 100vh;
 }
 
 /* LADO DA ARTE (Esquerda) */
 .bloco-arte {
-    width: 50%;
-    height: 100vh; /* Ocupa exatamente a altura da janela */
+    width: 890px;
+    height: 690px;
     background-color: #ffffff;
     display: flex;
     justify-content: center; /* Centraliza a baleia se sobrar espaço */
     align-items: center;
-    overflow: hidden; /* Corta qualquer coisa que tente sair da div */
+    
 }
 
 .imagem-fundo {
@@ -50,10 +54,11 @@
     width: 100%;
     max-width: 400px;
     text-align: center;
+    
 }
 
 .titulo-balmy {
-    font-family: 'Balmy', sans-serif !important;
+    font-family: 'Balmy', sans-serif;
     font-size: 55px;
     margin-bottom: 30px;
 }
@@ -61,12 +66,14 @@
 .input-group {
     margin-bottom: 20px;
     text-align: left;
+    font-family: 'Garet', sans-serif;
 }
 
 .input-group label {
     display: block;
     font-family: 'Garet', sans-serif;
     margin-bottom: 8px;
+    color: #1e1e1e;
 }
 
 .input-group input {
@@ -74,17 +81,27 @@
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 12px;
+    font-size: 14px;
+    font-family: 'Garet', sans-serif;
 }
 
 .btn-preto {
-    width: 100%;
-    padding: 15px;
+    width: 425px;
+    padding: 12px;
     background-color: #000;
     color: #fff;
     border: none;
     border-radius: 12px;
     font-weight: bold;
     cursor: pointer;
+    font-family: 'Garet', sans-serif;
+    font-size: 14px;
+    
+}
+
+.mensagem-validacao {
+    font-family: 'Garet', sans-serif;
+    color: red;
 }
 
 .texto-rodape {

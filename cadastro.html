@@ -15,32 +15,115 @@
             
             <div class="input-group">
                 <label>Nome Completo</label>
-                <input type="text" placeholder="Nome completo">
-            </div>
+                <input type="text" id= "input_nome" placeholder="Nome completo">
+            </div> 
 
             <div class="input-group">
                 <label>E-mail</label>
-                <input type="email" placeholder="nome@email.com">
+                <input type="email" id="input_email" placeholder="nome@email.com">
             </div>
 
             <div class="input-group">
                 <label>Senha</label>
-                <input type="password" placeholder="Mínimo 8 caracteres">
+                <input type="password" id="input_senha" placeholder="Mínimo 8 caracteres">
             </div>
 
             <div class="input-group">
                 <label>Confirmar Senha</label>
-                <input type="password" placeholder="Repita a senha">
+                <input type="password" id="input_confirmarSenha" placeholder="Repita a senha">
             </div>
 
-            <button class="btn-preto">Criar Conta</button>
+            <button onclick="criar()" class="btn-preto">Criar Conta</button>
+            <br><br><div id="div_mensagem" class="mensagem-validacao" style="color: red;"></div>
+            
         </div>
     </div>
 
     <div class="bloco-arte">
-        <img src="assets/images/img-cadastro.png" alt="Processo Criativo de um rascunho" class="imagem-fundo">
+        <img src="assets/images/img-cadastro2.png" alt="Processo Criativo de um rascunho" class="imagem-fundo">
     </div>
+
+
+
 </section>
     
 </body>
 </html>
+<script>
+    function criar(){
+        let nome = input_nome.value;
+        let email = input_email.value; 
+        let senha = input_senha.value;
+        let confirmarS = input_confirmarSenha.value;
+       
+       
+   // Limpar mensagens anteriores
+    div_mensagem.innerHTML = "";
+
+    // Validação de Nome (Mínimo 3 caracteres)
+    if (nome.length <= 3) {
+        div_mensagem.innerHTML = "Por favor, insira um nome válido.";
+        return; // O return para a execução aqui se houver erro
+    }
+
+    //Validação de E-mail (@ e .com)
+    if (!email.includes("@") || !email.includes(".com")) {
+        div_mensagem.innerHTML = "O e-mail deve conter '@' e '.com'.";
+    return;
+}
+
+    //Validação de Senha (Mínimo 8 caracteres)
+    if (senha.length < 8) {
+        div_mensagem.innerHTML = "A senha deve ter pelo menos 8 caracteres.";
+        return;
+    }
+
+    //Validação de Senha (Números e Especiais usando FOR e VETOR)
+    let lista_especiais = ["!", "@", "#", "$", "%", "&", "*", "_"];
+    let lista_numeros = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+    let tem_especial = false;
+    let tem_numero = false;
+
+    // Percorre a senha caractere por caractere
+    for (let i = 0; i < senha.length; i++) {
+        let caractere_atual = senha[i];
+
+        // Verifica se o caractere atual está no vetor de especiais
+        for (let j = 0; j < lista_especiais.length; j++) {
+            if (caractere_atual == lista_especiais[j]) {
+                tem_especial = true;
+            }
+        }
+
+        // Verifica se o caractere atual está no vetor de números
+        for (let n = 0; n < lista_numeros.length; n++) {
+            if (caractere_atual == lista_numeros[n]) {
+                tem_numero = true;
+            }
+        }
+    }
+
+    if (tem_especial == false || tem_numero == false) {
+        div_mensagem.innerHTML = "A senha precisa de ao menos um número e um caractere especial (!@#$).";
+        return;
+    }
+
+    // Confirmação de Senha
+    if (senha != confirmarS) {
+        div_mensagem.innerHTML = "As senhas não coincidem.";
+        return;
+    }
+
+    // Se passou por todos os IFs sem dar return:
+    div_mensagem.innerHTML = "<span style='color: green;'>Cadastro realizado com sucesso!</span>";
+}
+
+
+</script>
+
+
+
+
+
+
+            

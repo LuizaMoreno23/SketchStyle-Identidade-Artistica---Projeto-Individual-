@@ -10,7 +10,7 @@
 <body>
     <section class="tela-acesso">
     <div class="bloco-arte">
-        <img src="assets/images/img-login.png" alt="Arte de Login" class="imagem-fundo">
+        <img src="assets/images/img-login.png" alt="Desenho de Baleia no Login" class="imagem-fundo">
     </div>
 
     <div class="bloco-interacao">
@@ -19,15 +19,16 @@
             
             <div class="input-group">
                 <label>E-mail</label>
-                <input type="email" placeholder="Seu @email.com">
+                <input type="email" placeholder="nome@email.com" id="input_email">
             </div>
 
             <div class="input-group">
                 <label>Senha</label>
-                <input type="password" placeholder="Sua senha">
+                <input type="password" placeholder="Sua senha" id="input_senha">
             </div>
 
-            <button class="btn-preto">Entrar</button>
+            <button class="btn-preto" onclick="entrar()">Entrar</button>
+            <br><br><div id="div_mensagem" class="mensagem-validacao"></div>
 
             <p class="texto-rodape">
                 Não tem uma conta? <a href="cadastro.html">Cadastre-se</a>
@@ -38,3 +39,55 @@
     
 </body>
 </html>
+<script>
+    function entrar(){
+        let email= input_email.value;
+        let senha= input_senha.value;
+
+        div_mensagem.innerHTML ="";
+
+        if(!email.includes("@") || !email.includes(".com")){
+            div_mensagem.innerHTML ="E-mail ou senha inválidos";
+            return;
+        }
+
+         if (senha.length < 8) {
+        div_mensagem.innerHTML = "E-mail ou senha inválidos";
+        return;
+        }
+
+        //Validação de Senha (Números e Especiais usando FOR e VETOR)
+        let lista_especiais = ["!", "@", "#", "$", "%", "&", "*", "_"];
+        let lista_numeros = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+        let tem_especial = false;
+        let tem_numero = false;
+
+        // Percorre a senha caractere por caractere
+        for (let i = 0; i < senha.length; i++) {
+            let caractere_atual = senha[i];
+
+            // Verifica se o caractere atual está no vetor de especiais
+            for (let j = 0; j < lista_especiais.length; j++) {
+                if (caractere_atual == lista_especiais[j]) {
+                    tem_especial = true;
+                }
+            }
+
+            // Verifica se o caractere atual está no vetor de números
+            for (let n = 0; n < lista_numeros.length; n++) {
+                if (caractere_atual == lista_numeros[n]) {
+                    tem_numero = true;
+                }
+            }
+        }
+
+        if (tem_especial == false || tem_numero == false) {
+            div_mensagem.innerHTML = "E-mail ou senha inválidos";
+            return;
+        }
+
+
+    }
+
+
+</script>
