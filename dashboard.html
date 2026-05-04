@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/alerta.js"></script>
+    <script src="../js/sessao.js"></script>
+</head>
+<body onload="validarSessao()">
+
+    <div class="janela">
+        <div class="header-left">
+            <img src="assets/images/logo.png" alt="Logo SketchStyle" class="logo">
+            
+            <div class="navegacao">
+                <a href="dashboard.html" class="agora">
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="quiz.html">
+                    <h3>Quiz</h3>
+                </a>
+            </div>
+
+            <div class="btn-logout" onclick="limparSessao()">
+                <h3>Sair</h3>
+            </div>
+        </div>
+
+        <div class="dash">
+            
+            <div class="header-top">
+                <div class="hello">
+                    <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+                </div>
+            </div>
+
+            <div class="kpi-container">
+                <div class="card-kpi">
+                    <h3>Estilo mais sorteado do dia!</h3>
+                    <p>Hoje o estilo <br>
+                    <b id="kpi_estilo_alta">---</b> <br>
+                    está em alta!</p>
+                </div>
+
+                <div class="card-kpi">
+                    <h3>Sua Jornada</h3>
+                    <p>Você já realizou <br>
+                    <b id="kpi_total_descobertas">0</b> <br>
+                    descobertas artísticas!</p>
+                </div>
+            </div>
+
+            <div class="graph-container">
+                <div class="graph">
+                    <h3 class="titulo-grafico">Seu DNA Artístico</h3>
+                    <div class="canvas-container">
+                        <canvas id="myChartRadar"></canvas>
+                    </div>
+                </div>
+
+                <div class="graph">
+                    <h3 class="titulo-grafico">Preferências da Comunidade</h3>
+                    <div class="canvas-container">
+                        <canvas id="myChartPizza"></canvas>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    // Inserindo o nome do usuário na saudação 
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    // Configuração do Gráfico de Radar
+const ctxRadar = document.getElementById('myChartRadar');
+new Chart(ctxRadar, {
+    type: 'radar',
+    data: {
+        labels: ['Realismo', 'Mangá', 'Cartoon', 'Minimalismo', 'Urbano'],
+        datasets: [{
+            label: 'Seu Perfil',
+            data: [8, 5, 3, 9, 4], 
+            fill: true,
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            borderColor: 'rgb(255, 99, 132)',
+            pointBackgroundColor: 'rgb(255, 99, 132)',
+            borderWidth: 1.5, 
+            pointRadius: 1    
+        }]
+    },
+    options: {
+        maintainAspectRatio: false,
+    layout: {
+        padding: 2
+    },
+        scales: {
+            r: { 
+                angleLines: { color: 'white' },
+                grid: { color: 'rgba(255, 255, 255, 0.2)' },
+                pointLabels: {
+                    color: 'white', 
+                    font: { size: 14}
+                },
+                ticks: {
+                    color: 'white', 
+                    backdropColor: 'transparent' 
+                }
+            }
+        },
+        plugins: {
+            legend: {
+                labels: { color: 'white', font: { size: 14 } }
+            }
+        }
+    }
+});
+
+// Configuração do Gráfico de Pizza (Preferências da Comunidade)
+const ctxPizza = document.getElementById('myChartPizza');
+new Chart(ctxPizza, {
+    type: 'pie',
+    data: {
+        labels: ['Realismo', 'Mangá', 'Cartoon', 'Minimalismo', 'Urbano'],
+        datasets: [{
+            data: [12, 19, 7, 5, 10], 
+            backgroundColor: [
+                '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'
+            ],
+            borderColor: '#333',
+            borderWidth: 1
+        }]
+    },
+    options: {
+        plugins: {
+            legend: {
+                display: true,
+                position: 'top',
+                labels: {
+                    color: 'white', // Texto das legendas em branco
+                    font: { size: 14 }
+                }
+            }
+        }
+    }
+});
+</script>
