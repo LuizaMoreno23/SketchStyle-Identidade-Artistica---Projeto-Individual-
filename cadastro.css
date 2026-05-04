@@ -15,6 +15,7 @@
 
 * { margin: 0; 
     padding: 0; 
+    box-sizing: border-box;
 
 }
 
@@ -36,7 +37,7 @@
 
 .card-acesso {
     width: 100%;
-    max-width: 420px; /* Largura baseada no seu print */
+    max-width: 420px; 
 }
 
 .titulo-balmy {
