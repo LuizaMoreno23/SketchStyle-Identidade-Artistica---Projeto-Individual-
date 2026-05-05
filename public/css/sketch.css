@@ -1,7 +1,7 @@
 /* Fonte para os Títulos (Balmy) */
 @font-face {
     font-family: 'Balmy';
-    src: url('assets/fontes/balmy/Balmy\ Beta.ttf') format('truetype'); 
+    src: url('../assets/fontes/balmy/Balmy\ Beta.ttf') format('truetype'); 
     font-weight: normal;
     font-style: normal;
 }
@@ -9,7 +9,7 @@
 /* Fonte para os Títulos (Garet)*/
 @font-face {
     font-family: 'Garet';
-    src: url('assets/fontes/garet/Garet-Book.woff2') format('truetype'); 
+    src: url('../assets/fontes/garet/Garet-Book.woff2') format('truetype'); 
     font-weight: normal;
     font-style: normal;
 }
@@ -22,7 +22,7 @@
 
 /* 1. CONTAINER DA MOLDURA (Onde fica o traço preto) */
 .container-moldura-sketch {
-    background-image: url('assets/images/linha-baixo.png'); 
+    background-image: url('../assets/images/linha-baixo.png'); 
     background-size: 100% 100%; /* Força a moldura a esticar em toda a área */
     background-repeat: no-repeat;
     width: 100%; /* Ocupa quase a tela toda */

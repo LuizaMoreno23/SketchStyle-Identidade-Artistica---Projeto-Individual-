@@ -4,20 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
-    <link rel="stylesheet" href="quiz.css">
-    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="stylesheet" href="./css/quiz.css">
+    <link rel="icon" type="image/png" href="./assets/images/logo.png">
 </head>
 <body>
 
 <div class="janela">
     <div class="header-left">
-        <img src="assets/images/logo.png" alt="Logo" class="logo">
+        <img src="./assets/images/logo.png" alt="Logo" class="logo">
         <div class="navegacao">
-            <a href="dashboard.html"><h3>Dashboard</h3></a>
-            <a href="quiz.html" class="agora"><h3>Quiz</h3></a>
+            <a href="./dashboard/dashboard.html"><h3>Dashboard</h3></a>
+            <a href="../quiz.html" class="agora"><h3>Quiz</h3></a>
         </div>
-        <div class="btn-logout" onclick="limparSessao()">
-            <h3>Sair</h3>
+        <div class="btn-logout">
+            <a href="./index.html">
+                <h3>Sair</h3>
+                </a>
         </div>
     </div>
 
@@ -186,6 +188,7 @@ function verificarFinal() {
     let respostas = [];
     for (let i = 1; i <= 10; i++) {
         let resp = document.querySelector(`input[name="p${i}"]:checked`);
+        
         if (!resp) {
             alert(`Por favor, responda a pergunta ${i} antes de finalizar!`);
             return;
@@ -237,9 +240,9 @@ function verificarFinal() {
         texto = `Você possui um olhar clínico e paciência admirável. Sua busca pela perfeição técnica transforma o papel em uma janela para a realidade.<br><br><b>Artista de Referência:</b> Leonardo da Vinci.<br>Embora seja um polímata, ele é a base do estudo anatômico e da técnica de sfumato (transições suaves de sombra) que todo realista busca até hoje.
 `;
         imagensHtml = `
-            <img src="assets/images/realismo1.png">
-            <img src="assets/images/realismo2.png">
-            <img src="assets/images/realismo3.png">`;
+            <img src="../assets/images/realismo1.png">
+            <img src="../assets/images/realismo2.png">
+            <img src="../assets/images/realismo3.png">`;
     } 
     else if (manga > realismo && manga >= cartoon && manga >= minimalismo && manga >= urbano) {
         vencedor = "Mangá";
@@ -247,36 +250,36 @@ function verificarFinal() {
         texto = `Sua criatividade é movida por histórias e emoções vibrantes. Com traços firmes, você dá vida a personagens icônicos.<br><br><b>Artista de Referência:</b> Akira Toriyama.<br>O criador de Dragon Ball. Ele revolucionou o estilo de luta, anatomia estilizada e perspectiva dinâmica. É a referência mais reconhecida mundialmente no gênero.
 `;
         imagensHtml = `
-            <img src="assets/images/manga1.png">
-            <img src="assets/images/manga2.png">
-            <img src="assets/images/manga3.png">`;
+            <img src="../assets/images/manga1.png">
+            <img src="../assets/images/manga2.png">
+            <img src="../assets/images/manga3.png">`;
     }
     else if (cartoon > realismo && cartoon > manga && cartoon >= minimalismo && cartoon >= urbano) {
         vencedor = "Cartoon";
         titulo = "Estilo Cartoon: A Arte da Expressão";
         texto = `Para você, o desenho é diversão e liberdade. Suas formas são dinâmicas e cheias de carisma e humor.<br><br><b>Artista de Referência:</b> Walt Disney.<br>Não há nome mais forte. Ele estabeleceu as 12 regras da animação e o estilo de formas arredondadas e expressivas que definiu o Cartoon americano por décadas.`;
         imagensHtml = `
-            <img src="assets/images/cartoon1.png">
-            <img src="assets/images/cartoon2.png">
-            <img src="assets/images/cartoon3.png">`;
+            <img src="../assets/images/cartoon1.png">
+            <img src="../assets/images/cartoon2.png">
+            <img src="../assets/images/cartoon3.png">`;
     }
     else if (minimalismo > realismo && minimalismo > manga && minimalismo > cartoon && minimalismo >= urbano) {
         vencedor = "Minimalismo";
         titulo = "Estilo Minimalismo: A Arte da Essência";
         texto = `Sua mente busca clareza. Você acredita que menos é mais, transmitindo ideias complexas com o mínimo de linhas.<br><br><b>Artista de Referência:</b> Pablo Picasso (Fase de Linhas).<br> Embora seja famoso pelo Cubismo, seus desenhos de linha única (One Line Drawings), como o famoso Touro ou a Pomba da Paz, são a maior referência de como reduzir um objeto à sua essência mínima.`;
         imagensHtml = `
-            <img src="assets/images/minimalismo1.png">
-            <img src="assets/images/minimalismo2.png">
-            <img src="assets/images/minimalismo3.png">`;
+            <img src=".assets/images/minimalismo1.png">
+            <img src=".assets/images/minimalismo2.png">
+            <img src=".assets/images/minimalismo3.png">`;
     }
     else {
         vencedor = "Urban Sketch";
         titulo = "Estilo Sketch Urbano: A Arte da Observação";
         texto = `Você é um explorador do cotidiano, capturando a energia das ruas e a história dos lugares por onde passa.<br><br><b>Artista de Referência:</b> Gabriel Campanario.<br>Ele é o jornalista e ilustrador que fundou o movimento global Urban Sketchers. Se o seu projeto fala de desenhar o que se vê na rua, ele é a referência contemporânea número 1.`;
         imagensHtml = `
-            <img src="assets/images/urbano1.png">
-            <img src="assets/images/urbano2.png">
-            <img src="assets/images/urbano3.png">`;
+            <img src=".assets/images/urbano1.png">
+            <img src=".assets/images/urbano2.png">
+            <img src=".assets/images/urbano3.png">`;
     }
 
     // Inserir os dados no id do HTML

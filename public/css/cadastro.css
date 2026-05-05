@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Balmy';
-    src: url('assets/fontes/balmy/Balmy\ Beta.ttf') format('truetype'); 
+    src: url('../assets/fontes/balmy/Balmy\ Beta.ttf') format('truetype'); 
     font-weight: normal;
     font-style: normal;
 }
@@ -8,7 +8,7 @@
 /* Fonte para os Títulos (Garet)*/
 @font-face {
     font-family: 'Garet';
-    src: url('assets/fontes/garet/Garet-Book.woff2') format('truetype'); 
+    src: url('../assets/fontes/garet/Garet-Book.woff2') format('truetype'); 
     font-weight: normal;
     font-style: normal;
 }

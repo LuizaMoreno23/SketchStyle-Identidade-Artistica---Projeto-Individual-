@@ -1,7 +1,7 @@
 /* Fonte para os Títulos (Balmy) */
 @font-face {
     font-family: 'Balmy';
-    src: url('assets/fontes/balmy/Balmy\ Beta.ttf') format('truetype'); 
+    src: url('../assets/fontes/balmy/Balmy\ Beta.ttf') format('truetype'); 
     font-weight: normal;
     font-style: normal;
 }
@@ -9,7 +9,7 @@
 /* Fonte para os Títulos (Garet)*/
 @font-face {
     font-family: 'Garet';
-    src: url('assets/fontes/garet/Garet-Book.woff2') format('truetype'); 
+    src: url('../assets/fontes/garet/Garet-Book.woff2') format('truetype'); 
     font-weight: normal;
     font-style: normal;
 }
@@ -33,7 +33,7 @@
 
 /* --- 1. AJUSTE DO CONTAINER MOLDURA (Para ocupar mais tela) --- */
 .containerr-molduraa-sketchh {
-    background-image: url('assets/images/linha-baixo.png'); 
+    background-image: url('../assets/images/linha-baixo.png'); 
     background-size: 100% 100%;
     background-repeat: no-repeat;
     width: 97%;           
@@ -68,7 +68,7 @@
 
 /* --- 3. AJUSTE DA CAIXA RABISCADA (Um pouco mais larga) --- */
 .box-conteudo-rabiscado {
-    background-image: url('assets/images/moldura-retangulo.png'); 
+    background-image: url('../assets/images/moldura-retangulo.png'); 
     background-size: 100% 100%;
     background-repeat: no-repeat;
     width: 600px;        

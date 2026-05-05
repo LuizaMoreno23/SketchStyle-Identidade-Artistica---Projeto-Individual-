@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-    <link rel="stylesheet" href="cadastro.css">
-    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="icon" type="image/png" href="./assets/images/logo.png">
 </head>
 <body>
     <section class="tela-acesso">
@@ -40,7 +40,7 @@
     </div>
 
     <div class="bloco-arte">
-        <img src="assets/images/img-cadastro2.png" alt="Processo Criativo de um rascunho" class="imagem-fundo">
+        <img src="./assets/images/img-cadastro2.png" alt="Processo Criativo de um rascunho" class="imagem-fundo">
     </div>
 
 
@@ -112,10 +112,18 @@
     if (senha != confirmarS) {
         div_mensagem.innerHTML = "As senhas não coincidem.";
         return;
+    
     }
 
     // Se passou por todos os IFs sem dar return está ok:
     div_mensagem.innerHTML = "<span style='color: green;'>Cadastro realizado com sucesso!</span>";
+
+
+    setTimeout(() => {
+                window.location = "login.html";
+            }, "1000");
+
+    
 }
 
 

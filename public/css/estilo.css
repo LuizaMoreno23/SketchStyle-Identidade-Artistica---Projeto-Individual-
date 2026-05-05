@@ -1,14 +1,14 @@
 /* 1. FONTES - Caminhos ajustados para sair da pasta /styles e entrar em /assets */
 @font-face {
     font-family: 'Balmy';
-    src: url('assets/fontes/balmy/Balmy\ Beta.ttf') format('truetype'); 
+    src: url('../assets/fontes/balmy/Balmy\ Beta.ttf') format('truetype'); 
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Garet';
-    src: url('assets/fontes/garet/Garet-Book.woff2') format('woff2'); 
+    src: url('../assets/fontes/garet/Garet-Book.woff2') format('woff2'); 
     font-weight: normal;
     font-style: normal;
 }

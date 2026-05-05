@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="dashboard.css">
-    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="icon" type="image/png" href="../assets/images/logo.png">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../js/alerta.js"></script>
     <script src="../js/sessao.js"></script>
@@ -14,19 +14,22 @@
 
     <div class="janela">
         <div class="header-left">
-            <img src="assets/images/logo.png" alt="Logo SketchStyle" class="logo">
+            <img src="../assets/images/logo.png" alt="Logo SketchStyle" class="logo">
             
             <div class="navegacao">
-                <a href="dashboard.html" class="agora">
+                <a href="../dashboard/dashboard.html" class="agora">
                     <h3>Dashboard</h3>
                 </a>
-                <a href="quiz.html">
+                <a href="../quiz.html">
                     <h3>Quiz</h3>
                 </a>
             </div>
 
-            <div class="btn-logout" onclick="limparSessao()">
+            <div class="btn-logout">
+                <a href="../index.html">
                 <h3>Sair</h3>
+                </a>
+                
             </div>
         </div>
 
