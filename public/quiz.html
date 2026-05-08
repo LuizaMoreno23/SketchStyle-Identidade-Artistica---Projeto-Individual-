@@ -169,6 +169,9 @@
 </body>
 </html>
 <script>
+    // Recurso da API de armazenamento web que permite salvar dados temporários no navegador de forma segura durante a navegação
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
 function irProxima(atual, proxima, nomePergunta) {
 
   let resposta = document.querySelector('input[name="'+nomePergunta+'"]:checked');

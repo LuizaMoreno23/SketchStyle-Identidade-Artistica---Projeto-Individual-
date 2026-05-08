@@ -115,16 +115,41 @@
     
     }
 
-    // Se passou por todos os IFs sem dar return está ok:
-    div_mensagem.innerHTML = "<span style='color: green;'>Cadastro realizado com sucesso!</span>";
+    // 3.FETCH 
+    fetch("/usuarios/cadastrar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            // Nomes que o controller do Web-DataViz espera : suas va
+            // riáveis
+            nomeServer: nome,
+            emailServer: email,
+            senhaServer: senha
+        }),
+    })
+    .then(function (resposta) {
+        console.log("resposta: ", resposta);
 
+        if (resposta.ok) {
+            div_mensagem.innerHTML = "<span style='color: green;'>Cadastro realizado com sucesso! Redirecionando...</span>";
 
-    setTimeout(() => {
+            setTimeout(() => {
                 window.location = "login.html";
-            }, "1000");
+            }, "2000");
+        } else {
+            throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+    })
+    .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+    });
 
-    
+    return false;
 }
+
+
 
 
 </script>
