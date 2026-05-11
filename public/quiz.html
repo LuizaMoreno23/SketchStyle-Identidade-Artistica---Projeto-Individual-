@@ -271,18 +271,18 @@ function verificarFinal() {
         titulo = "Estilo Minimalismo: A Arte da Essência";
         texto = `Sua mente busca clareza. Você acredita que menos é mais, transmitindo ideias complexas com o mínimo de linhas.<br><br><b>Artista de Referência:</b> Pablo Picasso (Fase de Linhas).<br> Embora seja famoso pelo Cubismo, seus desenhos de linha única (One Line Drawings), como o famoso Touro ou a Pomba da Paz, são a maior referência de como reduzir um objeto à sua essência mínima.`;
         imagensHtml = `
-            <img src=".assets/images/minimalismo1.png">
-            <img src=".assets/images/minimalismo2.png">
-            <img src=".assets/images/minimalismo3.png">`;
+            <img src="../assets/images/minimalismo1.png">
+            <img src="../assets/images/minimalismo2.png">
+            <img src="../assets/images/minimalismo3.png">`;
     }
     else {
         vencedor = "Urban Sketch";
         titulo = "Estilo Sketch Urbano: A Arte da Observação";
         texto = `Você é um explorador do cotidiano, capturando a energia das ruas e a história dos lugares por onde passa.<br><br><b>Artista de Referência:</b> Gabriel Campanario.<br>Ele é o jornalista e ilustrador que fundou o movimento global Urban Sketchers. Se o seu projeto fala de desenhar o que se vê na rua, ele é a referência contemporânea número 1.`;
         imagensHtml = `
-            <img src=".assets/images/urbano1.png">
-            <img src=".assets/images/urbano2.png">
-            <img src=".assets/images/urbano3.png">`;
+            <img src="../assets/images/urbano1.png">
+            <img src="../assets/images/urbano2.png">
+            <img src="../assets/images/urbano3.png">`;
     }
 
     // Inserir os dados no id do HTML
@@ -291,8 +291,48 @@ function verificarFinal() {
     document.getElementById("descricao_estilo").innerHTML = texto;
 
   
-    // os pontos (realismo, manga, etc) para a tabela 'tentativa_quiz' no MySQL
-    console.log(`Resultado salvo para o banco: ${vencedor}`);
+    fetch("/quiz/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        idUsuarioServer: sessionStorage.ID_USUARIO,
+        realismoServer: realismo,
+        mangaServer: manga,
+        cartoonServer: cartoon,
+        minimalismoServer: minimalismo,
+        urbanoServer: urbano,
+        vencedorServer: vencedor
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+        //   cardErro.style.display = "block";
+
+          mensagem_erro.innerHTML =
+            "Resultado salvo com sucesso! Indo para a Dashboard...";
+
+          setTimeout(() => {
+            window.location = "./dashboard/dashboard.html";
+          }, "1000");
+
+        } else {
+          throw "Houve um erro ao tentar salvar o resultado do quiz!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
+
+    return false;
+
+
+
 }
 </script>
 
