@@ -79,31 +79,31 @@
     }
 
     //Validação de Senha numeros e especiais usando FOR e o Vetor
-    let lista_especiais = ["!", "@", "#", "$", "%", "&", "*", "_"];
-    let lista_numeros = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-    let tem_especial = false;
-    let tem_numero = false;
+    let listaEspeciais = ["!", "@", "#", "$", "%", "&", "*", "_"];
+    let listaNumeros = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+    let temEspecial = false;
+    let temNumero = false;
 
     // Percorre a senha caractere por caractere
     for (let i = 0; i < senha.length; i++) {
         let caractere_atual = senha[i];
 
         // Verifica se o caractere atual está no vetor de especiais
-        for (let j = 0; j < lista_especiais.length; j++) {
-            if (caractere_atual == lista_especiais[j]) {
-                tem_especial = true;
+        for (let j = 0; j < listaEspeciais.length; j++) {
+            if (caractere_atual == listaEspeciais[j]) {
+                temEspecial = true;
             }
         }
 
         // Verifica se o caractere atual está no vetor de números
-        for (let n = 0; n < lista_numeros.length; n++) {
-            if (caractere_atual == lista_numeros[n]) {
-                tem_numero = true;
+        for (let n = 0; n < listaNumeros.length; n++) {
+            if (caractere_atual == listaNumeros[n]) {
+                temNumero = true;
             }
         }
     }
 
-    if (tem_especial == false || tem_numero == false) {
+    if (temEspecial == false || temNumero == false) {
         div_mensagem.innerHTML = "A senha precisa de ao menos um número e um caractere especial (!@#$).";
         return;
     }

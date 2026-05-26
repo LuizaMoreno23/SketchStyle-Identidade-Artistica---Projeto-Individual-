@@ -35,119 +35,119 @@
             <div id="p1">
                 <h3>1. Qual é a sua relação com o tempo ao iniciar um desenho?</h3>
                 <div class="alternativas-lista">
-                    <label><input type="radio" name="p1" value="A"> Gosto de passar horas ou dias refinando detalhes.</label>
-                    <label><input type="radio" name="p1" value="B"> Prefiro capturar a essência em poucos minutos.</label>
-                    <label><input type="radio" name="p1" value="C"> Gosto de um processo rápido e conceitual.</label>
-                    <label><input type="radio" name="p1" value="D"> Sigo etapas: rascunho e finalização.</label>
-                    <label><input type="radio" name="p1" value="E"> Processo divertido e exagerado.</label>
+                    <label><input type="radio" name="p1" value="A" onclick="respostaAtual = 'A'"> Gosto de passar horas ou dias refinando detalhes.</label>
+                    <label><input type="radio" name="p1" value="B" onclick="respostaAtual = 'B'"> Prefiro capturar a essência em poucos minutos.</label>
+                    <label><input type="radio" name="p1" value="C" onclick="respostaAtual = 'C'"> Gosto de um processo rápido e conceitual.</label>
+                    <label><input type="radio" name="p1" value="D" onclick="respostaAtual = 'D'"> Sigo etapas: rascunho e finalização.</label>
+                    <label><input type="radio" name="p1" value="E" onclick="respostaAtual = 'E'"> Processo divertido e exagerado.</label>
                 </div>
-                <button class="btn-proxima" onclick="irProxima('p1','p2','p1')">Próxima</button>
+                <button class="btn-proxima" onclick="irProxima('p1','p2')">Próxima</button>
             </div>
 
             <div id="p2" style="display: none;">
                 <h3>2. Na hora de desenhar o rosto humano, o que é mais importante?</h3>
                 <div class="alternativas-lista">
-                    <label><input type="radio" name="p2" value="A"> A precisão anatômica.</label>
-                    <label><input type="radio" name="p2" value="B"> Expressões exageradas e olhos grandes.</label>
-                    <label><input type="radio" name="p2" value="C"> A simplificação das formas.</label>
-                    <label><input type="radio" name="p2" value="D"> A expressividade cômica.</label>
-                    <label><input type="radio" name="p2" value="E"> As linhas rápidas da rua.</label>
+                    <label><input type="radio" name="p2" value="A" onclick="respostaAtual = 'A'"> A precisão anatômica.</label>
+                    <label><input type="radio" name="p2" value="B" onclick="respostaAtual = 'B'"> Expressões exageradas e olhos grandes.</label>
+                    <label><input type="radio" name="p2" value="C" onclick="respostaAtual = 'C'"> A simplificação das formas.</label>
+                    <label><input type="radio" name="p2" value="D" onclick="respostaAtual = 'D'"> A expressividade cômica.</label>
+                    <label><input type="radio" name="p2" value="E" onclick="respostaAtual = 'E'"> As linhas rápidas da rua.</label>
                 </div>
-                <button class="btn-proxima" onclick="irProxima('p2','p3','p2')">Próxima</button>
+                <button class="btn-proxima" onclick="irProxima('p2','p3')">Próxima</button>
             </div>
 
             <div id="p3" style="display: none;">
     <h3>3. Qual material você mais gosta de usar?</h3>
     <div class="alternativas-lista">
-        <label><input type="radio" name="p3" value="A"> Lápis graduados (H a 6B) e esfuminho.</label>
-        <label><input type="radio" name="p3" value="B"> Canetas nankin e marcadores para cores vibrantes.</label>
-        <label><input type="radio" name="p3" value="C"> Apenas uma caneta de ponta fina ou digital.</label>
-        <label><input type="radio" name="p3" value="D"> Pincéis digitais variados e cores saturadas.</label>
-        <label><input type="radio" name="p3" value="E"> Caneta esferográfica e talvez aquarela portátil.</label>
+        <label><input type="radio" name="p3" value="A" onclick="respostaAtual = 'A'"> Lápis graduados (H a 6B) e esfuminho.</label>
+        <label><input type="radio" name="p3" value="B" onclick="respostaAtual = 'B'"> Canetas nankin e marcadores para cores vibrantes.</label>
+        <label><input type="radio" name="p3" value="C" onclick="respostaAtual = 'C'"> Apenas uma caneta de ponta fina ou digital.</label>
+        <label><input type="radio" name="p3" value="D" onclick="respostaAtual = 'D'"> Pincéis digitais variados e cores saturadas.</label>
+        <label><input type="radio" name="p3" value="E" onclick="respostaAtual = 'E'"> Caneta esferográfica e talvez aquarela portátil.</label>
     </div>
-    <button class="btn-proxima" onclick="irProxima('p3','p4','p3')">Próxima</button>
+    <button class="btn-proxima" onclick="irProxima('p3','p4')">Próxima</button>
 </div>
 
 <div id="p4" style="display: none;">
-    <h3>4. Como você define o "traço" ideal no seu trabalho?</h3>
+    <h3>4. Como você define o "traço" ideal no seu desenho?</h3>
     <div class="alternativas-lista">
-        <label><input type="radio" name="p4" value="A"> Quase invisível, focado na transição de luz e sombra.</label>
-        <label><input type="radio" name="p4" value="B"> Firme, preto e com variações de espessura.</label>
-        <label><input type="radio" name="p4" value="C"> Uma linha contínua, limpa e sem excessos.</label>
-        <label><input type="radio" name="p4" value="D"> Curvilíneo, dinâmico e muito expressivo.</label>
-        <label><input type="radio" name="p4" value="E"> Rápido, "nervoso" e com hachuras para sombrear.</label>
+        <label><input type="radio" name="p4" value="A" onclick="respostaAtual = 'A'"> Quase invisível, focado na transição de luz e sombra.</label>
+        <label><input type="radio" name="p4" value="B" onclick="respostaAtual = 'B'"> Firme, preto e com variações de espessura.</label>
+        <label><input type="radio" name="p4" value="C" onclick="respostaAtual = 'C'"> Uma linha contínua, limpa e sem excessos.</label>
+        <label><input type="radio" name="p4" value="D" onclick="respostaAtual = 'D'"> Curvilíneo, dinâmico e muito expressivo.</label>
+        <label><input type="radio" name="p4" value="E" onclick="respostaAtual = 'E'"> Rápido, "nervoso" e com hachuras para sombrear.</label>
     </div>
-    <button class="btn-proxima" onclick="irProxima('p4','p5','p4')">Próxima</button>
+    <button class="btn-proxima" onclick="irProxima('p4','p5')">Próxima</button>
 </div>
 
 <div id="p5" style="display: none;">
     <h3>5. Ao desenhar uma paisagem, o que você prioriza?</h3>
     <div class="alternativas-lista">
-        <label><input type="radio" name="p5" value="A"> Perspectiva matemática e iluminação naturalista.</label>
-        <label><input type="radio" name="p5" value="B"> Cenários fantásticos ou cidades futuristas.</label>
-        <label><input type="radio" name="p5" value="C"> Apenas a silhueta ou elementos essenciais.</label>
-        <label><input type="radio" name="p5" value="D"> Cenários coloridos e formas lúdicas.</label>
-        <label><input type="radio" name="p5" value="E"> A arquitetura real de uma rua com seus "defeitos".</label>
+        <label><input type="radio" name="p5" value="A" onclick="respostaAtual = 'A'"> Perspectiva e iluminação natural.</label>
+        <label><input type="radio" name="p5" value="B" onclick="respostaAtual = 'B'"> Cenários fantásticos ou cidades futuristas.</label>
+        <label><input type="radio" name="p5" value="C" onclick="respostaAtual = 'C'"> Apenas a silhueta ou elementos essenciais.</label>
+        <label><input type="radio" name="p5" value="D" onclick="respostaAtual = 'D'"> Cenários coloridos e formas lúdicas.</label>
+        <label><input type="radio" name="p5" value="E" onclick="respostaAtual = 'E'"> A arquitetura real de uma rua com seus "defeitos".</label>
     </div>
-    <button class="btn-proxima" onclick="irProxima('p5','p6','p5')">Próxima</button>
+    <button class="btn-proxima" onclick="irProxima('p5','p6')">Próxima</button>
 </div>
 
 <div id="p6" style="display: none;">
     <h3>6. Como você aborda o desenho de objetos (ex: uma caneca)?</h3>
     <div class="alternativas-lista">
-        <label><input type="radio" name="p6" value="A"> Tento fazer parecer que a pessoa pode "pegar" o objeto.</label>
-        <label><input type="radio" name="p6" value="B"> Adiciono brilhos exagerados e estilo anime.</label>
-        <label><input type="radio" name="p6" value="C"> Represento apenas com três ou quatro linhas essenciais.</label>
-        <label><input type="radio" name="p6" value="D"> Dou personalidade ao objeto, talvez colocando olhos nele.</label>
-        <label><input type="radio" name="p6" value="E"> Desenho o objeto com as manchas e marcas de uso.</label>
+        <label><input type="radio" name="p6" value="A" onclick="respostaAtual = 'A'"> Tento fazer parecer que a pessoa pode "pegar" o objeto.</label>
+        <label><input type="radio" name="p6" value="B" onclick="respostaAtual = 'B'"> Adiciono brilhos exagerados e estilo anime.</label>
+        <label><input type="radio" name="p6" value="C" onclick="respostaAtual = 'C'"> Represento apenas com três ou quatro linhas essenciais.</label>
+        <label><input type="radio" name="p6" value="D" onclick="respostaAtual = 'D'"> Dou personalidade ao objeto, talvez colocando olhos nele.</label>
+        <label><input type="radio" name="p6" value="E" onclick="respostaAtual = 'E'"> Desenho o objeto com as manchas e marcas de uso.</label>
     </div>
-    <button class="btn-proxima" onclick="irProxima('p6','p7','p6')">Próxima</button>
+    <button class="btn-proxima" onclick="irProxima('p6','p7')">Próxima</button>
 </div>
 
 <div id="p7" style="display: none;">
-    <h3>7. Qual o seu objetivo final ao terminar uma obra?</h3>
+    <h3>7. Qual o seu objetivo final ao terminar um desenho?</h3>
     <div class="alternativas-lista">
-        <label><input type="radio" name="p7" value="A"> Que perguntem: "É uma foto ou um desenho?".</label>
-        <label><input type="radio" name="p7" value="B"> Que o espectador sinta a história do personagem.</label>
-        <label><input type="radio" name="p7" value="C"> Que a imagem transmita uma ideia de forma simples.</label>
-        <label><input type="radio" name="p7" value="D"> Que o desenho traga diversão visual.</label>
-        <label><input type="radio" name="p7" value="E"> Que seja um registro de um lugar por onde passei.</label>
+        <label><input type="radio" name="p7" value="A" onclick="respostaAtual = 'A'"> Que perguntem: "É uma foto ou um desenho?".</label>
+        <label><input type="radio" name="p7" value="B" onclick="respostaAtual = 'B'"> Que o espectador sinta a história do personagem.</label>
+        <label><input type="radio" name="p7" value="C" onclick="respostaAtual = 'C'"> Que a imagem transmita uma ideia de forma simples.</label>
+        <label><input type="radio" name="p7" value="D" onclick="respostaAtual = 'D'"> Que o desenho traga diversão visual.</label>
+        <label><input type="radio" name="p7" value="E" onclick="respostaAtual = 'E'"> Que seja um registro de um lugar por onde passei.</label>
     </div>
-    <button class="btn-proxima" onclick="irProxima('p7','p8','p7')">Próxima</button>
+    <button class="btn-proxima" onclick="irProxima('p7','p8')">Próxima</button>
 </div>
 
 <div id="p8" style="display: none;">
     <h3>8. Quando você erra um traço, o que você faz?</h3>
     <div class="alternativas-lista">
-        <label><input type="radio" name="p8" value="A"> Uso a borracha até ficar perfeito.</label>
-        <label><input type="radio" name="p8" value="B"> Escondo o erro com hachuras ou preenchimento.</label>
-        <label><input type="radio" name="p8" value="C"> Começo do zero, a linha deve ser única.</label>
-        <label><input type="radio" name="p8" value="D"> Transformo o erro em algo engraçado.</label>
-        <label><input type="radio" name="p8" value="E"> Deixo o erro lá, faz parte da energia do esboço.</label>
+        <label><input type="radio" name="p8" value="A" onclick="respostaAtual = 'A'"> Uso a borracha até ficar perfeito.</label>
+        <label><input type="radio" name="p8" value="B" onclick="respostaAtual = 'B'"> Escondo o erro com hachuras ou preenchimento.</label>
+        <label><input type="radio" name="p8" value="C" onclick="respostaAtual = 'C'"> Começo do zero, a linha deve ser única.</label>
+        <label><input type="radio" name="p8" value="D" onclick="respostaAtual = 'D'"> Transformo o erro em algo engraçado.</label>
+        <label><input type="radio" name="p8" value="E" onclick="respostaAtual = 'E'"> Deixo o erro lá, faz parte da energia do esboço.</label>
     </div>
-    <button class="btn-proxima" onclick="irProxima('p8','p9','p8')">Próxima</button>
+    <button class="btn-proxima" onclick="irProxima('p8','p9')">Próxima</button>
 </div>
 
 <div id="p9" style="display: none;">
     <h3>9. Onde você busca suas principais referências?</h3>
     <div class="alternativas-lista">
-        <label><input type="radio" name="p9" value="A"> Em fotografias de alta resolução e anatomia.</label>
-        <label><input type="radio" name="p9" value="B"> Em quadrinhos japoneses e animações.</label>
-        <label><input type="radio" name="p9" value="C"> No design gráfico moderno e ícones.</label>
-        <label><input type="radio" name="p9" value="D"> Em filmes de animação e tirinhas.</label>
-        <label><input type="radio" name="p9" value="E"> Olhando pela janela ou em bancos de praça.</label>
+        <label><input type="radio" name="p9" value="A" onclick="respostaAtual = 'A'"> Em fotografias de alta resolução.</label>
+        <label><input type="radio" name="p9" value="B" onclick="respostaAtual = 'B'"> Em quadrinhos japoneses e animações.</label>
+        <label><input type="radio" name="p9" value="C" onclick="respostaAtual = 'C'"> No design gráfico moderno e ícones.</label>
+        <label><input type="radio" name="p9" value="D" onclick="respostaAtual = 'D'"> Em filmes de animação e tirinhas.</label>
+        <label><input type="radio" name="p9" value="E" onclick="respostaAtual = 'E'"> Olhando pela janela ou em bancos de praça.</label>
     </div>
-    <button class="btn-proxima" onclick="irProxima('p9','p10','p9')">Próxima</button>
+    <button class="btn-proxima" onclick="irProxima('p9','p10')">Próxima</button>
 </div>
 
 <div id="p10" style="display: none;">
     <h3>10. Se você tivesse que definir sua arte em uma palavra:</h3>
     <div class="alternativas-lista">
-        <label><input type="radio" name="p10" value="A"> Perfeição.</label>
-        <label><input type="radio" name="p10" value="B"> Narrativa.</label>
-        <label><input type="radio" name="p10" value="C"> Essência.</label>
-        <label><input type="radio" name="p10" value="D"> Diversão.</label>
-        <label><input type="radio" name="p10" value="E"> Observação.</label>
+        <label><input type="radio" name="p10" value="A" onclick="respostaAtual = 'A'"> Perfeição.</label>
+        <label><input type="radio" name="p10" value="B" onclick="respostaAtual = 'B'"> Narrativa.</label>
+        <label><input type="radio" name="p10" value="C" onclick="respostaAtual = 'C'"> Essência.</label>
+        <label><input type="radio" name="p10" value="D" onclick="respostaAtual = 'D'"> Diversão.</label>
+        <label><input type="radio" name="p10" value="E" onclick="respostaAtual = 'E'"> Observação.</label>
     </div>
     <button class="btn-proxima" onclick="verificarFinal()">Finalizar Quiz</button>
 </div>
@@ -171,33 +171,32 @@
 <script>
     // Recurso da API de armazenamento web que permite salvar dados temporários no navegador de forma segura durante a navegação
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+let respostas = []; // Vetor que vai acumulando as 10 respostas
+let respostaAtual = ""; // Guarda a resposta da tela que está aparecendo agora
 
-function irProxima(atual, proxima, nomePergunta) {
+function irProxima(atual, proxima) {
+    if (respostaAtual == "") {
+        alert("Escolha uma opção antes de continuar!");
+        return; 
+    }
 
-  let resposta = document.querySelector('input[name="'+nomePergunta+'"]:checked');
+    // Adiciona a resposta selecionada no nosso vetor histórico
+    respostas.push(respostaAtual);
 
-  if (!resposta) {
-    alert("Escolha uma opção antes de continuar!");
-    return;
-  }
+    // Reseta a variável para a próxima tela começar em branco
+    respostaAtual = "";
 
-  document.getElementById(atual).style.display = "none";
-  document.getElementById(proxima).style.display = "block";
+    // Troca de telas usando IDs 
+    document.getElementById(atual).style.display = "none";// Oculta a pergunta respondida
+    document.getElementById(proxima).style.display = "block";
 }
 
 function verificarFinal() {
-
-  // Capturar as respostas de todas as 10 perguntas
-    let respostas = [];
-    for (let i = 1; i <= 10; i++) {
-        let resp = document.querySelector(`input[name="p${i}"]:checked`);
-        
-        if (!resp) {
-            alert(`Por favor, responda a pergunta ${i} antes de finalizar!`);
-            return;
-        }
-        respostas.push(resp.value);
+    if (respostaAtual == "") {
+        alert("Por favor, responda a última pergunta antes de finalizar!");
+        return;
     }
+    respostas.push(respostaAtual); // Coloca a 10ª resposta no vetor
 
     // Variáveis de contagem para os 5 estilos
     let realismo = 0;    // A
@@ -227,8 +226,7 @@ function verificarFinal() {
     // Esconde o container que envolve as perguntas (p1 até p10)
     document.getElementById("caixa_perguntas").style.display = "none"; 
     // Mostra o container de resultado 
-    const containerResult = document.getElementById("container_resultado");
-    containerResult.style.display = "flex";
+    document.getElementById("container_resultado").style.display = "block";
 
     //Variáveis para preencher o resultado
     let titulo = "";
@@ -240,8 +238,7 @@ function verificarFinal() {
     if (realismo >= manga && realismo >= cartoon && realismo >= minimalismo && realismo >= urbano) {
         vencedor = "Realismo";
         titulo = "Estilo Realismo: A Arte da Percepção";
-        texto = `Você possui um olhar clínico e paciência admirável. Sua busca pela perfeição técnica transforma o papel em uma janela para a realidade.<br><br><b>Artista de Referência:</b> Leonardo da Vinci.<br>Embora seja um polímata, ele é a base do estudo anatômico e da técnica de sfumato (transições suaves de sombra) que todo realista busca até hoje.
-`;
+        texto = `Você possui um olhar clínico e paciência admirável. Sua busca pela perfeição técnica transforma o papel em uma janela para a realidade.<br><br><b>Artista de Referência:</b> Leonardo da Vinci.<br>Embora seja um polímata, ele é a base do estudo anatômico e da técnica de sfumato (transições suaves de sombra) que todo realista busca até hoje.`;
         imagensHtml = `
             <img src="../assets/images/realismo1.png">
             <img src="../assets/images/realismo2.png">
@@ -250,8 +247,7 @@ function verificarFinal() {
     else if (manga > realismo && manga >= cartoon && manga >= minimalismo && manga >= urbano) {
         vencedor = "Mangá";
         titulo = "Estilo Mangá: A Arte da Narrativa";
-        texto = `Sua criatividade é movida por histórias e emoções vibrantes. Com traços firmes, você dá vida a personagens icônicos.<br><br><b>Artista de Referência:</b> Akira Toriyama.<br>O criador de Dragon Ball. Ele revolucionou o estilo de luta, anatomia estilizada e perspectiva dinâmica. É a referência mais reconhecida mundialmente no gênero.
-`;
+        texto = `Sua criatividade é movida por histórias e emoções vibrantes. Com traços firmes, você dá vida a personagens icônicos.<br><br><b>Artista de Referência:</b> Akira Toriyama.<br>O criador de Dragon Ball. Ele revolucionou o estilo de luta, anatomia estilizada e perspectiva dinâmica. É a referência mais reconhecida mundialmente no gênero.`;
         imagensHtml = `
             <img src="../assets/images/manga1.png">
             <img src="../assets/images/manga2.png">
@@ -298,7 +294,7 @@ function verificarFinal() {
       },
       body: JSON.stringify({
         // crie um atributo que recebe o valor recuperado aqui
-        // Agora vá para o arquivo routes/usuario.js
+        // Agora vai para o arquivo routes/usuario.js
         idUsuarioServer: sessionStorage.ID_USUARIO,
         realismoServer: realismo,
         mangaServer: manga,
@@ -312,15 +308,7 @@ function verificarFinal() {
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
-        //   cardErro.style.display = "block";
-
-          mensagem_erro.innerHTML =
-            "Resultado salvo com sucesso! Indo para a Dashboard...";
-
-          setTimeout(() => {
-            window.location = "./dashboard/dashboard.html";
-          }, "1000");
-
+            console.log("Resultado salvo no banco de dados com sucesso!");
         } else {
           throw "Houve um erro ao tentar salvar o resultado do quiz!";
         }

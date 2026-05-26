@@ -51,11 +51,11 @@ function buscarUltimaTentativa(idUsuario) {
 function buscarDadosComunidade() {
     var instrucaoSql = `
        SELECT 
-            SUM(pontosRealismo) AS GeralRealismo,
-            SUM(pontosManga) AS GeralManga,
-            SUM(pontosCartoon) AS GeralCartoon,
-            SUM(pontosMinimalismo) AS GeralMinimalismo,
-            SUM(pontosUrbano) AS GeralUrbano
+            COUNT(CASE WHEN estiloVencedor = 'Realismo' THEN 1 END) AS GeralRealismo,
+            COUNT(CASE WHEN estiloVencedor = 'Mangá' THEN 1 END) AS GeralManga,
+            COUNT(CASE WHEN estiloVencedor = 'Cartoon' THEN 1 END) AS GeralCartoon,
+            COUNT(CASE WHEN estiloVencedor = 'Minimalismo' THEN 1 END) AS GeralMinimalismo,
+            COUNT(CASE WHEN estiloVencedor = 'Urbano' THEN 1 END) AS GeralUrbano
         FROM tentativaQuiz;
     `;
     return database.executar(instrucaoSql);

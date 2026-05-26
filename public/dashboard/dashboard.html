@@ -83,91 +83,11 @@
 
 </html>
 
-<!-- <script>
-    // Recurso da API de armazenamento web que permite salvar dados temporários no navegador de forma segura durante a navegação
-    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-
-    // Configuração do Gráfico de Radar
-const ctxRadar = document.getElementById('myChartRadar');
-new Chart(ctxRadar, {
-    type: 'radar',
-    data: {
-        labels: ['Realismo', 'Mangá', 'Cartoon', 'Minimalismo', 'Urbano'],
-        datasets: [{
-            label: 'Seu Perfil',
-            data: [8, 5, 3, 9, 4], 
-            fill: true,
-            backgroundColor: 'rgba(190, 168, 144, 0.7)',
-            borderColor: 'rgb(190, 168, 144)',
-            pointBackgroundColor: 'rgb(190, 168, 144)',
-            borderWidth: 1.5, 
-            pointRadius: 1    
-        }]
-    },
-    options: {
-        maintainAspectRatio: false,
-    layout: {
-        padding: 2
-    },
-        scales: {
-            r: { 
-                angleLines: { color: 'white' },
-                grid: { color: 'rgba(255, 255, 255, 0.2)' },
-                pointLabels: {
-                    color: 'white', 
-                    font: { size: 14}
-                },
-                ticks: {
-                    color: 'white', 
-                    backdropColor: 'transparent' 
-                }
-            }
-        },
-        plugins: {
-            legend: {
-                labels: { color: 'white', font: { size: 14 } }
-            }
-        }
-    }
-});
-
-// Configuração do Gráfico de Pizza (Preferências da Comunidade)
-const ctxPizza = document.getElementById('myChartPizza');
-new Chart(ctxPizza, {
-    type: 'pie',
-    data: {
-        labels: ['Realismo', 'Mangá', 'Cartoon', 'Minimalismo', 'Urbano'],
-        datasets: [{
-            data: [12, 19, 7, 5, 10], 
-            backgroundColor: [
-                '#737D7F', '#DAD6D7', '#BEA890', '#232728', '#A6ADB5'
-            ],
-            borderColor: '#333',
-            borderWidth: 1
-        }]
-    },
-    options: {
-        plugins: {
-            legend: {
-                display: true,
-                position: 'top',
-                labels: {
-                    color: 'white', // Texto das legendas em branco
-                    font: { size: 14 }
-                }
-            }
-        }
-    }
-});
-</script> -->
-
-
-
 <script>
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
-    /* NA API DA FACULDADE: window.onload = exibirAquariosDoUsuario();
-       NO SEU PROJETO: Chamamos as funções que buscam seus dados específicos de arte.
+    /*
+       Chama as funções que buscam seus dados específicos.
     */
     window.onload = function() {
         obterDadosRadar();
@@ -180,59 +100,74 @@ new Chart(ctxPizza, {
         var idUsuario = sessionStorage.ID_USUARIO;
 
         // KPI Sua Jornada 
-    fetch(`/dash/jornada/${idUsuario}`)
-        .then(res => res.json()).then(json => {
-        if (json.vencedorJornada == 'Nenhum') {
-            kpi_total_descobertas.innerHTML = "_____";
-        } else {
-            kpi_total_descobertas.innerHTML = json.vencedorJornada;
-        }
-    });
+    fetch(`/dash/jornada/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos KPI Jornada: ${JSON.stringify(resposta)}`);
+                    
+                    if (resposta.vencedorJornada == 'Nenhum') {
+                        kpi_total_descobertas.innerHTML = "_____";
+                    } else {
+                        kpi_total_descobertas.innerHTML = resposta.vencedorJornada;
+                    }
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+        .catch(function (error) {
+            console.error(`Erro KPI: ${error.message}`);
+        });
+
 
         // KPI Estilo em Alta (Geral do Dia)
-        fetch(`/dash/alta-hoje`)    
-        .then(res => res.json()).then(json => {
-        if (json.estiloEmAlta == 'Nenhum') {
-            kpi_estilo_alta.innerHTML = "Sem votos";
-        } else {
-            kpi_estilo_alta.innerHTML = json.estiloEmAlta;
-        }
-    });
-}
-
-
-    // --- SEÇÃO DO GRÁFICO DE RADAR (Seu DNA Artístico) ---
-
-    /* NA API DA FACULDADE: 
-       function obterDadosGrafico(idAquario) {
-           fetch(`/medidas/ultimas/${idAquario}`).then(...)
-       }
-    */
-    function obterDadosRadar() {
-        var idUsuario = sessionStorage.ID_USUARIO;
-
-        fetch(`/dash/ultima/${idUsuario}`, { cache: 'no-store' })   
+        fetch(`/dash/alta-hoje`, { cache: 'no-store' })
             .then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta) {
-                    // Validamos se existe resposta para não quebrar em contas novas
+                    console.log(`Dados recebidos KPI Alta: ${JSON.stringify(resposta)}`);
+                    
+                    if (resposta.estiloEmAlta == 'Nenhum') {
+                        kpi_estilo_alta.innerHTML = "Sem votos";
+                    } else {
+                        kpi_estilo_alta.innerHTML = resposta.estiloEmAlta;
+                    }
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+        .catch(function (error) {
+            console.error(`Erro KPI: ${error.message}`);
+        });
+    }
+
+
+    function obterDadosRadar() {
+        var idUsuario = sessionStorage.ID_USUARIO;
+
+        fetch(`/dash/ultima/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos Radar: ${JSON.stringify(resposta)}`);
+                    
+                    // Validação para não quebrar o gráfico se for um usuário novo sem quiz
                     if (resposta && resposta.pontosRealismo !== undefined) {
                         plotarRadar(resposta);
                     } else {
                         console.log("Usuário ainda não possui quiz registrado.");
                     }
                 });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
             }
+        })
+        .catch(function (error) {
+            console.error(`Erro na obtenção dos dados gráfico: ${error.message}`);
         });
     }
 
-    /* NA API DA FACULDADE:
-       function plotarGrafico(resposta, idAquario) {
-           let dados = { labels: [], datasets: [{ label: 'Umidade', data: [] }] };
-           // ... for loop para push ...
-           new Chart(document.getElementById(`myChartCanvas${idAquario}`), config);
-       }
-    */
+    
     function plotarRadar(resposta) {
         const ctxRadar = document.getElementById('myChartRadar');
 
@@ -277,17 +212,19 @@ new Chart(ctxPizza, {
 
     // --- SEÇÃO DO GRÁFICO DE PIZZA (Preferências da Comunidade) ---
 
-    /* NA API DA FACULDADE: Não há um exemplo de Pizza Geral, 
-       mas a lógica de obter dados é a mesma do gráfico de linhas.
-    */
     function obterDadosPizza() {
-        fetch(`/dash/comunidade`, { cache: 'no-store' })
-        .then(function (response) {
+        fetch(`/dash/comunidade`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta) {
+                    console.log(`Dados recebidos Pizza: ${JSON.stringify(resposta)}`);
                     plotarPizza(resposta);
                 });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
             }
+        })
+        .catch(function (error) {
+            console.error(`Erro na obtenção dos dados gráfico: ${error.message}`);
         });
     }
 
@@ -303,14 +240,10 @@ new Chart(ctxPizza, {
 
         let totalPontos = realismo + manga + cartoon + minimalismo + urbano;
 
-        /* NA API DA FACULDADE: Geralmente os dados são inseridos via loop (for)
-           NO PROJETO: Como os dados da comunidade já vêm prontos e validados do SQL,
-           podemos passar as propriedades diretamente.
-        */
+       
         let dadosPizza = {
             labels: ['Realismo', 'Mangá', 'Cartoon', 'Minimalismo', 'Urbano'],
             datasets: [{
-                // Passa a variavel com valores 
                 data: [realismo, manga, cartoon, minimalismo, urbano],
                 backgroundColor: ['#737D7F', '#DAD6D7', '#BEA890', '#232728', '#A6ADB5'],
                 borderColor: '#333',
@@ -347,11 +280,5 @@ new Chart(ctxPizza, {
         });
     }
 
-    /* NA API DA FACULDADE: 
-       function atualizarGrafico(idAquario, dados, myChart) { ... setTimeout ... }
-       
-       NO SEU PROJETO: 
-       Não usamos a função atualizarGrafico com loop infinito (setTimeout) 
-       porque seus dados não mudam a cada segundo como temperatura. 
-    */
+   
 </script>
