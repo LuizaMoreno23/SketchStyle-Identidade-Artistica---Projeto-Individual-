@@ -16,7 +16,7 @@ function buscarTotalAcumulado(idUsuario) {
             WHEN SUM(pontosManga) >= SUM(pontosCartoon) AND SUM(pontosManga) >= SUM(pontosMinimalismo) AND SUM(pontosManga) >= SUM(pontosUrbano) AND SUM(pontosManga) > 0 THEN 'Mangá'
             WHEN SUM(pontosCartoon) >= SUM(pontosMinimalismo) AND SUM(pontosCartoon) >= SUM(pontosUrbano) AND SUM(pontosCartoon) > 0 THEN 'Cartoon'
             WHEN SUM(pontosMinimalismo) >= SUM(pontosUrbano) AND SUM(pontosMinimalismo) > 0 THEN 'Minimalismo'
-            WHEN SUM(pontosUrbano) > 0 THEN 'Urbano'
+            WHEN SUM(pontosUrbano) > 0 THEN 'Urban Sketch'
             ELSE 'Nenhum' END AS vencedorJornada
         FROM tentativaQuiz
         WHERE fkUsuario = ${idUsuario};
@@ -55,7 +55,7 @@ function buscarDadosComunidade() {
             COUNT(CASE WHEN estiloVencedor = 'Mangá' THEN 1 END) AS GeralManga,
             COUNT(CASE WHEN estiloVencedor = 'Cartoon' THEN 1 END) AS GeralCartoon,
             COUNT(CASE WHEN estiloVencedor = 'Minimalismo' THEN 1 END) AS GeralMinimalismo,
-            COUNT(CASE WHEN estiloVencedor = 'Urbano' THEN 1 END) AS GeralUrbano
+            COUNT(CASE WHEN estiloVencedor = 'Urban Sketch' THEN 1 END) AS GeralUrbano
         FROM tentativaQuiz;
     `;
     return database.executar(instrucaoSql);

@@ -172,7 +172,7 @@
     // Recurso da API de armazenamento web que permite salvar dados temporários no navegador de forma segura durante a navegação
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 let respostas = []; // Vetor que vai acumulando as 10 respostas
-let respostaAtual = ""; // Guarda a resposta da tela que está aparecendo agora
+let respostaAtual = ""; // Guarda a resposta da tela que está aparecendo 
 
 function irProxima(atual, proxima) {
     if (respostaAtual == "") {
@@ -207,7 +207,7 @@ function verificarFinal() {
 
     // Contabilizar os pontos baseado no vetor de respostas percorrer  o vetor 'respostas' do índice 0 até o final dele
     for (let i = 0; i < respostas.length; i++) {
-        let valor = respostas[i]; // Pega o valor (A, B, C etc) na posição i
+        let valor = respostas[i]; 
 
         if (valor == "A") {
             realismo++;

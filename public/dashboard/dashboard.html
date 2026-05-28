@@ -172,9 +172,9 @@
         const ctxRadar = document.getElementById('myChartRadar');
 
         let dadosRadar = {
-            labels: ['Realismo', 'Mangá', 'Cartoon', 'Minimalismo', 'Urbano'],
+            labels: ['Realismo', 'Mangá', 'Cartoon', 'Minimalismo', 'Urban Sketch'],
             datasets: [{
-                label: 'Sua Última Tentativa',
+                label: 'Sua última tentativa no quiz',
                 data: [
                     resposta.pontosRealismo || 0, 
                     resposta.pontosManga || 0, 
@@ -242,10 +242,10 @@
 
        
         let dadosPizza = {
-            labels: ['Realismo', 'Mangá', 'Cartoon', 'Minimalismo', 'Urbano'],
+            labels: ['Realismo', 'Mangá', 'Cartoon', 'Minimalismo', 'Urban Sketch'],
             datasets: [{
                 data: [realismo, manga, cartoon, minimalismo, urbano],
-                backgroundColor: ['#737D7F', '#DAD6D7', '#BEA890', '#232728', '#A6ADB5'],
+                backgroundColor: ['#737D7F', '#DAD6D7', '#BEA890', '#101112', '#A6ADB5'],
                 borderColor: '#333',
                 borderWidth: 1
             }]
@@ -263,12 +263,18 @@
                     },
                     tooltip: {
                         callbacks: {
+
                             //cálculo da porcentagem 
                             label: function(context) {
                                 let valorBruto = context.raw || 0;
                                 
-                                // Se o banco estiver zerado, a porcentagem fica 0 para evitar divisão por zero
-                                let porcentagem = totalPontos > 0 ? ((valorBruto / totalPontos) * 100).toFixed(0) : 0;
+                                let porcentagem = 0; 
+
+                                if (totalPontos > 0) {
+                                    porcentagem = ((valorBruto / totalPontos) * 100).toFixed(0);
+                                } else {
+                                    porcentagem = 0;
+                                }
                                 
                                 // Retorna o nome do estilo e a porcentagem calculada 
                                 return ` ${context.label}: ${porcentagem}%`;

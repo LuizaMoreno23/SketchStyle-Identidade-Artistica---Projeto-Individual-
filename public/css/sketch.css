@@ -31,7 +31,7 @@
     padding: 60px 40px; /* Espaço para o conteúdo não tocar no traço */
 }
 
-/* 2. O WRAPPER FLEX (Aumentando a área de ocupação) */
+/* 2. (Aumentando a área de ocupação) */
 .flex-wrapper-sketch {
     display: flex;
     align-items: center; 
@@ -70,7 +70,7 @@
     text-align: center; /* Centraliza os títulos e parágrafos */
 }
 
-/* 6. ESTILO DOS TEXTOS (Para imitar seu protótipo) */
+/* 6. ESTILO DOS TEXTOS */
 .titulo-sketch {
     font-size: 80px;
     font-family: 'Balmy', sans-serif;
